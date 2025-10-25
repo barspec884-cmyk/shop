@@ -1,0 +1,142 @@
+
+:root{
+  --bg:#f9f5ee;
+  --text:#2b1a09;
+  --amber:#c7a97a;
+  --amber-deep:#b08c5c;
+  --card:#fff8ee;
+  --shadow:0 6px 16px rgba(0,0,0,.15);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: var(--bg) url('assets/bg-wood.jpg') center/cover fixed no-repeat;
+  color:var(--text);
+  font-family:'Noto Sans JP', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+  line-height:1.6;
+}
+
+.app{
+  max-width:430px;
+  min-height:100dvh;
+  margin:0 auto;
+  background:rgba(249,245,238,.92);
+  backdrop-filter:saturate(120%) blur(2px);
+  display:flex;
+  flex-direction:column;
+  border-radius:14px;
+  box-shadow:0 4px 18px rgba(0,0,0,.25);
+}
+
+header.topbar{
+  position:sticky; top:0; z-index:10;
+  background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.75));
+  border-bottom:1px solid rgba(0,0,0,.06);
+  display:flex; align-items:center; gap:12px;
+  padding:10px 14px;
+}
+
+.topbar .logo{
+  width:36px; height:36px; border-radius:8px; object-fit:contain;
+  background:#fff; padding:4px; box-shadow:var(--shadow);
+}
+
+.topbar .title{
+  font-family:'Playfair Display', serif;
+  font-size:1.2rem; letter-spacing:.02em;
+}
+
+.lang{ margin-left:auto; display:flex; gap:8px; }
+.lang button{
+  border:1px solid rgba(0,0,0,.12);
+  background:#fff;
+  padding:6px 10px; border-radius:999px;
+  font-size:.85rem; cursor:pointer;
+}
+.lang button.active{ background:var(--amber); color:white; border-color:transparent }
+
+main{ padding:18px 16px 90px }
+
+.card{
+  background:var(--card);
+  border-radius:14px;
+  box-shadow:var(--shadow);
+  padding:16px;
+  margin:12px 0;
+  border:1px solid rgba(0,0,0,.06);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.btn{
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:18px 14px;
+  border-radius:14px;
+  text-decoration:none; color:var(--text);
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+  box-shadow:var(--shadow);
+  transition:transform .05s ease;
+}
+.btn:active{ transform:translateY(1px) }
+.btn img{ width:32px; height:32px; margin-bottom:8px }
+.btn .cap{ font-weight:600 }
+.btn .sub{ font-size:.82rem; opacity:.8 }
+
+footer.tabbar{
+  position:sticky; bottom:0; z-index:20;
+  margin-top:auto;
+  background:rgba(255,255,255,.95);
+  border-top:1px solid rgba(0,0,0,.08);
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+}
+.tabbar a{
+  padding:10px 6px; display:flex; flex-direction:column; align-items:center; gap:6px;
+  text-decoration:none; color:var(--text); font-size:.74rem;
+}
+.tabbar a.active{ color:#000 }
+.tabbar img{ width:22px; height:22px; opacity:.9 }
+.tabbar a.active img{ opacity:1; filter:drop-shadow(0 1px 2px rgba(0,0,0,.3)) }
+
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.2rem; margin:6px 2px 10px;
+}
+
+.menu-tabs{ display:flex; gap:8px; flex-wrap:wrap; margin:6px 0 14px }
+.menu-tabs button{
+  border:1px solid rgba(0,0,0,.12); background:#fff; padding:8px 12px; border-radius:999px;
+  font-weight:600; cursor:pointer;
+}
+.menu-tabs button.active{ background:var(--amber); color:#fff; border-color:transparent }
+
+.item{
+  display:flex; gap:12px;
+}
+.item img{
+  width:88px; height:88px; border-radius:10px; object-fit:cover; background:#eee;
+}
+.item .meta{ flex:1 }
+.item .name{ font-weight:700 }
+.item .price{ font-weight:700; color:var(--amber-deep) }
+.item .desc{ font-size:.9rem; opacity:.8 }
+
+.badge{ font-size:.78rem; padding:3px 8px; border-radius:999px; background:rgba(199,169,122,.18); border:1px solid rgba(199,169,122,.5) }
+
+.map{
+  width:100%; aspect-ratio:16/10; border:0; border-radius:12px; box-shadow:var(--shadow);
+}
+
+.cta{
+  display:inline-block; padding:10px 14px; border-radius:10px; background:var(--amber); color:white; text-decoration:none; font-weight:700;
+  border:1px solid rgba(0,0,0,.08); box-shadow:var(--shadow);
+}
+
+.small{ font-size:.88rem; opacity:.8 }
